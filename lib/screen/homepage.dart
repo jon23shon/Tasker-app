@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:my_task/constant/color.dart';
 import 'package:my_task/model/task.dart';
 import 'package:my_task/widget/task_list.dart';
+// necessary imports for the functioning of the application
 
 class Homepage extends StatefulWidget {
   Homepage({Key? key}) : super(key: key);
@@ -32,9 +33,10 @@ class _HomepageState extends State<Homepage> {
         Container(
           padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
           child: Column(children: [
-            search(),
+            search(), //user search input
             Expanded(
                 child: ListView(
+              //tasks list
               children: [
                 Container(
                   margin: EdgeInsets.only(top: 40, bottom: 10),
@@ -43,7 +45,8 @@ class _HomepageState extends State<Homepage> {
                     style: TextStyle(fontWeight: FontWeight.w300, fontSize: 20),
                   ),
                 ),
-                for (Task taskk in findTask.reversed)
+                for (Task taskk in findTask
+                    .reversed) //when new task is created its at the top of the list
                   TaskList(
                     task: taskk,
                     TaskMod: theTaskMod,
@@ -86,6 +89,7 @@ class _HomepageState extends State<Homepage> {
                 ),
                 Container(
                   margin: EdgeInsets.only(bottom: 20, right: 20),
+                  //button that adds tasks to the screen
                   child: ElevatedButton(
                     child: Text(
                       '➕',
@@ -109,6 +113,7 @@ class _HomepageState extends State<Homepage> {
     );
   }
 
+  //top part of the application
   AppBar buildAppBar() {
     return AppBar(
       backgroundColor: tBGGrey,
@@ -132,18 +137,21 @@ class _HomepageState extends State<Homepage> {
     );
   }
 
+  //funtion to show that task is complete
   void theTaskMod(Task task) {
     setState(() {
       task.complete = !task.complete;
     });
   }
 
+  //function to delete tasks from the screen
   void thetaskDelete(String id) {
     setState(() {
       TasksList.removeWhere((item) => item.id == id);
     });
   }
 
+  //funtion to add the tasks to the screen and making them unique
   void theTaskAdd(String task) {
     setState(() {
       TasksList.add(
@@ -152,6 +160,7 @@ class _HomepageState extends State<Homepage> {
     taskManager.clear();
   }
 
+  //funtion for the tasks to match user input for the search
   void filterTask(String userInput) {
     List<Task> results = [];
     if (userInput.isEmpty) {
@@ -166,6 +175,7 @@ class _HomepageState extends State<Homepage> {
     });
   }
 
+  // widget code for the searchbar on the screen
   Widget search() {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20),

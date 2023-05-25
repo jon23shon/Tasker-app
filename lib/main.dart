@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:my_task/screen/homepage.dart';
 import 'package:flutter/services.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+// necessary imports for the functioning of the application
 
 void main() async {
-  await Hive.initFlutter();
+  await Hive.initFlutter(); //allows for saving on local storage of the device
 
   runApp(const MyApp());
 }
@@ -24,8 +25,8 @@ class MyApp extends StatelessWidget {
       title: 'my tasker',
       home: Homepage(),
       theme: ThemeData(primarySwatch: Colors.grey),
-    );
+    ); //homepage displaying imported functions of the application
   }
 }
 
-  // This widget is the root of your application.
+// This widget is the root of your application.

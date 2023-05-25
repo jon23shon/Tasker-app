@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 //import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:my_task/constant/color.dart';
 import 'package:my_task/model/task.dart';
+// necessary imports for the functioning of the application
 
 class TaskList extends StatelessWidget {
   final Task task;
@@ -31,12 +32,14 @@ class TaskList extends StatelessWidget {
             task.complete ? Icons.check_box : Icons.check_box_outline_blank,
             color: tdBlue,
           ),
+          //the check box used
           title: Text(
             task.textOnTask!,
             style: TextStyle(
                 color: Color.fromARGB(255, 0, 0, 0),
                 fontSize: 15,
                 decoration: task.complete ? TextDecoration.lineThrough : null),
+            //task completion decoration
           ),
           trailing: Container(
             padding: EdgeInsets.all(0),
@@ -53,6 +56,7 @@ class TaskList extends StatelessWidget {
               iconSize: 15,
               onPressed: () {
                 TaskDelete(task.id);
+                //task deletion
               },
             ),
           ),
