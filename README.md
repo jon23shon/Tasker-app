@@ -1,4 +1,4 @@
-# my_task
+# Tasker
 
 This is a Flutter task management app crossplatform application betweeen IOS and Android
  

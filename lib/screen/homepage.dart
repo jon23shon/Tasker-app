@@ -1,9 +1,9 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_constructors_in_immutables, non_constant_identifier_names, sized_box_for_whitespace, sort_child_properties_last
+// ignore_for_file: prefer_const_constructors, prefer_const_constructors_in_immutables, non_constant_identifier_names, sized_box_for_whitespace, sort_child_properties_last, deprecated_member_use
 
 import 'package:flutter/material.dart';
-import 'package:my_task/constant/color.dart';
-import 'package:my_task/model/task.dart';
-import 'package:my_task/widget/task_list.dart';
+import 'package:Tasker/constant/color.dart';
+import 'package:Tasker/model/task.dart';
+import 'package:Tasker/widget/task_list.dart';
 // necessary imports for the functioning of the application
 
 class Homepage extends StatefulWidget {
@@ -129,9 +129,8 @@ class _HomepageState extends State<Homepage> {
           width: 20,
           height: 20,
           child: ClipRRect(
-            borderRadius: BorderRadius.circular(20),
-            //child: Image.asset('assets/images/avatar.jpeg'),
-          ),
+              borderRadius: BorderRadius.circular(20),
+              child: Image(image: AssetImage('assets/Tasker_Logo.svg'))),
         ),
       ]),
     );

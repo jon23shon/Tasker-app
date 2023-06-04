@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "my_task",
+            "name": "Tasker",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "my_task (profile mode)",
+            "name": "Tasker (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "my_task (release mode)",
+            "name": "Tasker (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"
